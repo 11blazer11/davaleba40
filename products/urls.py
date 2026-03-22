@@ -1,5 +1,5 @@
-# from .views import 
-from rest_framework.routers import SimpleRouter, DefaultRouter
+from .views import BlogViewSet, ProductViewSet, PostViewSet
+from rest_framework.routers import DefaultRouter
 
 urlpatterns = [
 

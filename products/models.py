@@ -31,12 +31,26 @@ class Product(BaseModel):
         default='GEL'
     )
 
-    tags = models.ManyToManyField("products.ProductTag", related_name='products', blank=True)
-
     def __str__(self):
         return self.name
 
     def average_rating(self):
         pass
 
-    
+
+
+class Blog(BaseModel):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    author = models.ForeignKey('users.User', on_delete=models.SET_NULL, null=True, blank=True)
+
+
+
+class Post(models.Model):
+    title = models.CharField(max_length=255)
+    content = models.TextField()
+    author = models.ForeignKey('users.User', on_delete=models.CASCADE)
+
+
+    def __str__(self):
+        return self.title
