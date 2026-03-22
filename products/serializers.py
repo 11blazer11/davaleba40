@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product, Blog, Post
+from .models import Product, Blog, Posts
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -14,7 +14,7 @@ class BlogSerializer(serializers.ModelSerializer):
         exclude = ['created_at', 'updated_at'] 
 
 
-class PostSerializer(serializers.ModelSerializer):
+class PostsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Post
+        model = Posts
         exclude = ['created_at', 'updated_at'] 
